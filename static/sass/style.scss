@@ -1,0 +1,449 @@
+/* page home */
+body{
+    background-color: #ededed;
+    position: relative;
+}
+.navbar{
+    .navbar-toggler{
+        width: 50px;
+        height: 50px;
+        border-color: #0F97B5;
+        border-radius: 50%;
+    }
+    .btn{
+        border: 3px solid #24BEE0;
+        border-radius: 20px !important;
+        background-color: #24BEE0;
+        color: white;
+    }
+    .btn:hover{
+        border: 3px solid #24BEE0;
+        background-color: transparent;
+        color: #24BEE0;
+    }
+    li{
+        a{
+            position: relative;
+            span{
+                width: 0% !important;
+                height: 3px !important;
+                background-color: #E5661E !important;
+                position: absolute;
+                top: 85%;
+                left: 0;
+                
+            }
+        }
+        a:hover{
+            color: #E5661E;
+            span{
+                width: 100% !important;
+                transition: width 0.75s;
+            }
+        }
+        .active{
+            color: #E5661E !important;
+        }
+        
+    }
+
+}
+#sec1{
+    .textM{
+        width: 100%;
+        @media screen and (min-width: 992px) {
+            width: 65%;
+        }
+        h1:first-child{
+            font-size: 4rem !important;
+        }
+        .rect{
+            background-color: #F4F5F4;
+            width: 100%;
+            height: 60vh;
+            border-radius: 25px;
+            @media screen and (min-width: 768px) {
+                height: 40vh;
+            }
+            img{
+                width: 40px;
+                height: 40px;
+            }
+        }
+        .btnApp{
+            button{
+                border-radius: 25px !important;
+                background-color: #24BEE0;
+            }
+            p{
+                color: #CF7D4E;
+            }
+        }
+    }
+    .imgM{
+        width: 100%;
+        @media screen and (min-width: 992px) {
+            width: 35%;
+        }
+        img{
+            width: 95% !important;
+            height: 100%;
+            border-radius: 30px 0px 30px 30px !important;
+        }
+    }
+}
+#ourServices{
+    .cercle{
+        width: 40px;
+        height: 40px;
+        background-color: rgb(36, 190, 224,0.3);
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .cercle:hover{
+        background-color: rgba(36, 189, 224, 0.8);
+    }
+    .cards{
+        width: 100%;
+        overflow: hidden;
+        .car{
+            .opa{
+                width: 100%;
+                position: relative;
+                cursor: pointer;
+                img{
+                    width: 100%;
+                    height: 250px !important;
+                    border-radius: 20px !important;
+                    cursor: pointer;
+                }
+                span{
+                    width: 100%;
+                    height: 250px;
+                    border-radius: 20px !important;
+                    background-color: rgba(0, 0, 0, 0.1);
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+            }
+            .opa:hover{
+                span{
+                    background-color: rgba(0, 0, 0, 0.3);
+                }
+            }
+        }
+    }
+}
+#Why{
+    .cards2{
+        width: 100% !important;
+        height : auto !important;
+        .car2{
+            border: 2px solid transparent;
+            border-radius: 40px;
+            cursor: pointer;
+            .cercle{
+                width: 80px;
+                height: 80px;
+                background-color: rgb(36, 190, 224,0.3);
+                border-radius: 50%;
+                position: relative;
+                img{
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+        .car2:hover{
+            background-color: #f7f7f7;
+            border: 2px solid #24BEE0;
+        }
+    }
+}
+#doctors{
+    background-color: hsla(22, 57%, 56%, 0.05);
+    .btnSee{
+        border : 2px solid #CF7D4E;
+        color: #CF7D4E;
+        border-radius: 25px;
+    }
+    .cards3{
+        width: 100%;
+        .card3{
+            border-radius: 40px;
+            background-color: #F4F5F4;
+            @media screen and (min-width: 992px) {
+                max-width: 30%;
+            }
+            cursor: pointer;
+            h5{
+                color: #0F97B5 !important;
+            }
+        }
+        .card3:hover{
+            box-shadow: 0px 0px 20px 1px #CF7D4E
+        }
+    }
+}
+#statistique{
+    width: 100%;
+    height: 60vh;
+    background-color: #062126;
+    @media screen and (min-width: 768px) {
+        height: 30vh;
+    }
+    p{
+        color: #12CCF4;
+    }
+    .sep{
+        width: 2px;
+        height: 90%;
+        background-color: rgb(255, 255, 255,0.2);
+    }
+
+}
+#test{
+    .cercle{
+        width: 40px;
+        height: 40px;
+        background-color: #24BEE0;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+    .comm{
+        background-color: rgb(207, 125, 78, 0.08) !important;
+        border-radius: 30px;
+        .imgs{
+            img{
+                width: 60px;
+                height: 60px;
+            }
+            @media screen and (min-width: 992px) {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    }
+}
+#formApp{
+    form{
+        .btns{
+            border: 4px solid #24BEE0;
+            background-color: #24BEE0;
+            color: white;
+            border-radius: 25px;
+        }
+        .btns:hover{
+            background-color: transparent;
+            color: #062126;
+        }
+    }
+}
+.foot{
+    height: auto;
+    background-color: rgba(36, 189, 224, 0.15);
+    .menu{
+        width: 100%;
+        height: auto;
+        .cercle{
+            width: 40px;
+            height: 40px;
+            background-color: #bababa;
+            border-radius: 50%;
+            position: relative;
+            i{
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+        ul{
+            li{
+                list-style: none;
+                cursor: pointer;
+            }
+        }
+        form{
+            input:first-child{
+                width: 65%;
+                background-color: #24bde046;
+                border: 3px solid #24bde092;
+                border-radius: 25px;
+            }
+            input:last-child{
+                background-color: #24bde0;
+                color: white;
+                border: 3px solid #24bde0;
+                border-radius: 25px;
+                transform: translate(-50%);
+                margin: 0;
+
+            }
+
+        }
+    }
+    span{
+        width: 100%;
+        height: 2px;
+        background-color: rgba(0, 0, 0, 0.123);
+    }
+    .copyRight{
+        ul{
+            li{
+                list-style: none;
+            }
+        }
+    }
+}
+/* page doctors */
+#doctorsSec1{
+    width: 100%;
+    height: 50vh;
+    img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: 50% 10%;
+    }
+    .op{
+        width: 100%;
+        height: 50vh;
+        background-color: rgba(0, 0, 0, 0.25);
+        position: absolute;
+         left: 0;
+    }
+    span{
+        position: absolute;
+        top: 50;
+        left: 50;
+        transform: translate(-50,-50);
+        border-radius: 20px;
+        background-color: rgba(0, 0, 0, 0.9);
+
+    }
+}
+#doctorsInfo{
+    .carte{
+        width: 100%;
+        height: auto;
+        .x{
+            width: 100%;
+            height: auto;
+            @media screen and (min-width: 768px){
+                height: 60vh;
+            }
+            img{
+                width: 100%;
+                height: 100%;
+                @media screen and (min-width: 768px){
+                    max-width: 70%;
+                }
+            }
+            .stat{
+                width: 100%;
+                height: 100%;
+                background-color: rgba(229, 103, 30, 0.1);
+                border-radius: 30px;
+                @media screen and (min-width: 768px){
+                    width: 30%;
+                }
+                span{
+                    color: #CF7D4E;
+                }
+            }
+        }
+        .docInfo{
+            width: 80%;
+            height: 100%;
+            h4{
+                color: #CF7D4E;
+            }
+            span{
+                color: #24BEE0;
+            }
+        }
+    }
+}
+#doctorsSec2{
+    .carte{
+        .imgCarte{
+            width: 100%;
+            height: 50vh;
+            border-radius: 40px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: 50% 10%;
+            }
+        }
+        .agenda{
+            width: 100%;
+            height: 40vh;
+            .entet{
+                width: 100%;
+                height: 10vh;
+                background-color: #24beed;
+                border-radius: 30px 30px 0 0;
+            }
+            .bodyAgenda{
+                width: 100%;
+                height: 30vh;
+                background-color: #bababa3f;
+                border-radius: 0 0 30px 30px;
+                .firstLoc{
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+/* page about us */
+#aboutus{
+    width: 100%;
+    @media screen and (min-width: 768px) {
+        width: 90%;
+    }
+    @media screen and (min-width: 992px) {
+        width: 60%;
+    }
+}
+#archive{
+    .lines{
+        .line{
+            img{
+                width: 100%;
+                height: 40vh !important;
+                @media screen and (min-width: 768px) {
+                    width: 50%;
+                }
+            }
+            p{
+                width: 100%;
+                @media screen and (min-width: 768px) {
+                    width: 50%;
+                }
+            }
+        }
+    }
+}
+.rediriction{
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    border-radius: 50%;
+    opacity: 0;
+    transition: all .3s;
+}
+.rediriction:hover{
+    border-color: #E5661E;
+    background-color: #E5661E;
+}
+.rediriction.show{
+    opacity: 1;
+}

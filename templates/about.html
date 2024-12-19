@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- Mon style -->
+    <link rel="stylesheet" href="/static/sass/style.css" >
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <a class="navbar-brand fw-bold me-5" href="{{ url_for('home') }}">
+                <img src="/static/img/Group215.svg" alt="logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <img src="/static/img/Category.svg" alt="icone menu" srcset="">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item me-3 fw-semibold px-2">
+                    <a class="nav-link text-capitalize px-0" href="{{ url_for('home') }}">
+                        Home
+                        <span></span>
+                    </a>
+                </li>
+                <li class="nav-item me-3 fw-semibold px-2">
+                    <a class="nav-link text-capitalize px-0" href="{{ url_for('our_service') }}">
+                        Our services
+                        <span></span>
+                    </a>
+                </li>
+                <li class="nav-item me-3 fw-semibold px-2">
+                    <a class="nav-link text-capitalize px-0" href="{{ url_for('clients') }}">
+                        Clients
+                        <span></span>
+                    </a>
+                </li>
+                <li class="nav-item me-3 fw-semibold px-2">
+                    <a class="nav-link text-capitalize px-0 active" aria-current="page" href="{{ url_for('about') }}">
+                        About us
+                        <span></span>
+                    </a>
+                </li>
+                <li class="nav-item ms-3">
+                    <form action="{{ url_for('logout') }}" method="POST">
+                        <button type="submit" class="btn btn-danger px-4 fs-6 fw-bold">
+                            Logout
+                        </button>
+                    </form>
+                  </li>
+                </ul>
+                <button class="btn px-4 fs-6 fw-bold" onclick="redirictionToContacPage()">Make Appointment</button>
+            </div>
+        </div>
+    </nav>
+    <section id="doctorsSec1" class="d-flex justify-content-center align-items-center position-relatif">
+        <img src="/static/img/Rectangle39(2).png" alt="" srcset="">
+        <div class="op"></div>
+        <span class="px-5 py-3 fs-4 text-white">About us</span>
+    </section>
+    <section id="aboutus" class="container d-flex my-5 px-5">
+        <i class="fa-solid fa-quote-left fs-1 me-2 me-md-5"></i>
+        <p class="py-4 fs-5">Nullam sodales bibendum nulla ut vulputate. Vivamus auctor tincidunt urna, ac molestie lectus imperdiet id. Maecenas nisl massa, mollis sed sem a, finibus dapibus dui. Phasellus rhoncus, quam id molestie efficitur, elit ipsum blandit diam, ac lobortis lectus nibh quis ligula. Ut nunc erat, lobortis vel ultrices aliquet, efficitur id mauris. Duis posuere hendrerit est lacinia consectetur. Morbi nec volutpat ipsum. Cras blandit efficitur velit ut consequat. Suspendisse potenti.
+            <br><br>Quisque vitae nisi tempor, ultricies purus et, maximus metus. Phasellus tempus a lorem vel ultricies. Pellentesque a pharetra tellus, sit amet blandit ante. Morbi sollicitudin lacus ut orci fermentum, in vestibulum nulla egestas. Pellentesque nisi orci, ullamcorper ac bibendum quis, congue eget tellus. In sed est dolor. Mauris gravida sem diam, et placerat metus lacinia non. Morbi pellentesque ultricies ante at ultricies. Suspendisse vulputate elit vel sapien volutpat pharetra. In hac habitasse platea dictumst.
+            <br><br>Integer felis lorem, cursus ac leo quis, tristique elementum dolor. In hac habitasse platea dictumst. In hac habitasse platea dictumst. Sed interdum tincidunt suscipit. Sed sit amet tincidunt libero. Praesent id condimentum lacus. Vivamus congue scelerisque pulvinar.</p>
+    </section>
+    <section id="archive" class="container">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="my-5 fs-1 fw-bold">Our Achievements</h2>
+        </div>  
+        <div class="lines">
+            <div class="line d-flex flex-column flex-md-row justify-content-between align-items-center my-4">
+                <img class="px-5" src="/static/img/Rectangle40(1).png" alt="" srcset="">
+                <p class="p-5">Nullam sodales bibendum nulla ut vulputate. Vivamus auctor tincidunt urna, ac molestie lectus imperdiet id. Maecenas nisl massa, mollis sed sem a, finibus dapibus dui. Phasellus rhoncus, quam id molestie efficitur, elit ipsum blandit diam, ac lobortis lectus nibh quis ligula. Ut nunc erat, lobortis vel ultrices aliquet, efficitur id mauris.</p>
+            </div>
+            <div class="line d-flex flex-column flex-md-row align-items-center my-4">
+                <img class="px-5 d-md-none" src="/static/img/Rectangle41(3).png" alt="" srcset="">
+                <p class="p-5">Nullam sodales bibendum nulla ut vulputate. Vivamus auctor tincidunt urna, ac molestie lectus imperdiet id. Maecenas nisl massa, mollis sed sem a, finibus dapibus dui. Phasellus rhoncus, quam id molestie efficitur, elit ipsum blandit diam, ac lobortis lectus nibh quis ligula. Ut nunc erat, lobortis vel ultrices aliquet, efficitur id mauris.</p>
+                <img class="px-5 d-none d-md-block" src="/static/img/Rectangle41(3).png" alt="" srcset="">
+            </div>
+            <div class="line d-flex flex-column flex-md-row align-items-center my-4">
+                <img class="px-5" src="/static/img/Rectangle42(1).png" alt="" srcset="">
+                <p class="p-5">Nullam sodales bibendum nulla ut vulputate. Vivamus auctor tincidunt urna, ac molestie lectus imperdiet id. Maecenas nisl massa, mollis sed sem a, finibus dapibus dui. Phasellus rhoncus, quam id molestie efficitur, elit ipsum blandit diam, ac lobortis lectus nibh quis ligula. Ut nunc erat, lobortis vel ultrices aliquet, efficitur id mauris.</p>
+            </div>
+        </div>
+    </section>
+    <section id="doctors" class="container-fluid mt-4 py-5">    
+        <div class="container">
+            <div class="d-flex justify-content-between align-items-center">
+                <h2 class="my-5 fs-1 fw-bold">Our Qualified Doctors</h2>
+                <button class="btnSee btn px-4 py-2">See All Doctors<i class="fa-solid fa-right-long ms-4"></i></button>
+            </div>
+            <div class="row cards3 d-flex flex-wrap justify-content-evenly align-items-center ms-0">
+                <div class="col-12 col-md-5 col-lg-4 card3 p-4 d-flex flex-column justify-content-center align-items-center my-3">
+                    <img src="/static/img/Rectangle22.png" alt="" srcset="">
+                    <h4>Dr. Jane Nicholson</h4>
+                    <p>Leading Diagnostic Doctor</p>
+                    <h5>+500 Happy patients</h5>
+                    <p>iMedical Central Clinic, LA</p>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 card3 p-4 d-flex flex-column justify-content-center align-items-center my-3">
+                    <img src="/static/img/Rectangle22(1).png" alt="" srcset="">
+                    <h4>Dr. Alison Pretty</h4>
+                    <p>Consultant Dentist</p>
+                    <h5>+320 Happy patients</h5>
+                    <p>iMedical Central Clinic, LA</p>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 card3 p-4 d-flex flex-column justify-content-center align-items-center my-3">
+                    <img src="/static/img/Rectangle22(2).png" alt="" srcset="">
+                    <h4>Dr. Rebecca Flows</h4>
+                    <p>Leading Diagnostic Doctor</p>
+                    <h5>+900 Happy patients</h5>
+                    <p>iMedical Central Clinic, LA</p>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 card3 p-4 d-flex flex-column justify-content-center align-items-center my-3">
+                    <img src="/static/img/Rectangle22(3).png" alt="" srcset="">
+                    <h4>Dr. Maria Anderson</h4>
+                    <p>Leading Diagnostic Doctor</p>
+                    <h5>+500 Happy patients</h5>
+                    <p>iMedical Central Clinic, LA</p>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 card3 p-4 d-flex flex-column justify-content-center align-items-center my-3">
+                    <img src="/static/img/Rectangle22(4).png" alt="" srcset="">
+                    <h4>Dr. Derek Mendes</h4>
+                    <p>Consultant Dentist</p>
+                    <h5>+320 Happy patients</h5>
+                    <p>iMedical Central Clinic, LA</p>
+                </div>
+                <div class="col-12 col-md-5 col-lg-4 card3 p-4 d-flex flex-column justify-content-center align-items-center my-3">
+                    <img src="/static/img/Rectangle22(5).png" alt="" srcset="">
+                    <h4>Dr. Bob Singer</h4>
+                    <p>Leading Diagnostic Doctor</p>
+                    <h5>+900 Happy patients</h5>
+                    <p>iMedical Central Clinic, LA</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="statistique" class="container-fluid py-5 d-flex flex-column flex-md-row justify-content-evenly align-items-center ">
+        <div class="text-center">
+            <span class="text-white fw-bold fs-1">99%</span>
+            <p class="my-2 fs-5 fw-bolder">Positive Feedback</p>
+        </div>
+        <span class="sep d-none d-md-block"></span>
+        <div class="text-center">
+            <span class="text-white fw-bold fs-1">2,300+</span>
+            <p class="my-2 fs-5 fw-bolder">Happy Patients a week</p>
+        </div>
+        <span class="sep d-none d-md-block"></span>
+        <div class="text-center">
+            <span class="text-white fw-bold fs-1">43</span>
+            <p class="my-2 fs-5 fw-bolder">Professional Doctors</p>
+        </div>
+    </section>
+    <section id="test" class="container my-4 py-4">
+        <div class="d-flex justify-content-between align-items-center">
+            <h2 class="my-5 fs-1 fw-bold">Testimonials</h2>
+            <div class="d-flex align-items-center">
+                <div class="cercle mx-2 d-flex justify-content-center align-items-center"><i class="fa-solid fa-less-than"></i></div>
+                <div class="cercle mx-2 d-flex justify-content-center align-items-center"><i class="fa-solid fa-greater-than"></i></div>
+            </div>
+        </div>
+        <div class="comments row flex-nowrap overflow-hidden justify-content-md-evenly">
+            <div class="col-12 col-md-5 comm p-4 d-flex justify-content-between">
+                <div class="imgs">
+                    <img src="/static/img/Ellipse10.png" alt="" srcset="">
+                </div>
+                <div class="txt px-4">
+                    <h5>Sofia Potter</h5>
+                    <span>
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                    </span>
+                    <p class="mt-3">These guys are incredible to work with. Like seriously! They did everything so good, that I did not even imagine it would come up this awesome! Really looking forward to working with them again.</p>
+                </div>
+            </div>
+            <div class="col-12 col-md-5 comm p-4 d-flex justify-content-between">
+                <div class="imgs">
+                    <img src="/static/img/Ellipse9.png" alt="" srcset="">
+                </div>
+                <div class="txt px-4">
+                    <h5>Jordan Browler</h5>
+                    <span>
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                        <img src="/static/img/Star.png" alt="" srcset="">
+                    </span>
+                    <p class="mt-3">These guys are incredible to work with. Like seriously! They did everything so good, that I did not even imagine it would come up this awesome! Really looking forward to working with them again.   </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="foot container-fluid py-4 mt-5">
+        <div class="container d-flex flex-column justify-content-between align-items-between">
+            <div class="menu d-flex flex-column flex-lg-row justify-content-between">
+                <div>
+                    <img class="my-4" src="/static/img/Group215.svg" alt="" srcset="">
+                    <p>1429 Something Bridge, LA 4281</p>
+                    <p class="fw-semibold">Call: (321) 428 321 3902</p>
+                    <div class="resSoc d-flex">
+                        <div class="cercle me-3">
+                            <i class="fa-brands fa-twitter"></i>
+                        </div>
+                        <div class="cercle me-3">
+                            <i class="fa-brands fa-facebook"></i>
+                        </div>
+                        <div class="cercle me-3">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="my-4">Explore</h3>
+                    <ul class="p-0">
+                        <li class="py-1">Feature</li>
+                        <li class="py-1">About us</li>
+                        <li class="py-1">FAQs</li>
+                        <li class="py-1">Contact</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="my-4">Legal</h3>
+                    <ul class="p-0">
+                        <li class="py-1">Privacy Policy</li>
+                        <li class="py-1">Terms of Services</li>
+                        <li class="py-1">Documentations</li>
+                        <li class="py-1">Help Center</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="my-4">Subscribe</h3>
+                    <p>Subscribe to get the latestnews from us</p>
+                    <form action="">
+                        <input class="py-1 px-2" type="email" name="" id="mail" placeholder="Your Email">
+                        <input class="py-1 px-2" type="submit" value="Subscribe">
+                    </form>
+                </div>
+            </div>
+            <span class="sep mx-auto my-3"></span>
+            <div class="copyRight d-flex flex-column flex-md-row justify-content-between align-items-center">
+                <div class=" my-2">© 2023 iMedical, All Rights Reserved</div>
+                <div>
+                    <ul class="d-flex align-items-center my-2">
+                        <li class="mx-2">Privacy Policy</li>
+                        <li class="mx-2">Terms of Services</li>
+                        <li class="mx-2">Accesibility</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- my script-->
+    <script src="./static/js/button.js"></script>
+
+    <!-- Bootstrap js-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+
+    <!-- font icone-->
+    <script src="https://kit.fontawesome.com/2860646ad5.js" crossorigin="anonymous"></script>
+</body>
+</html>

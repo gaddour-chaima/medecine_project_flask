@@ -1,0 +1,455 @@
+/* page home */
+body {
+  background-color: #ededed;
+  position: relative;
+}
+
+.navbar .navbar-toggler {
+  width: 50px;
+  height: 50px;
+  border-color: #0F97B5;
+  border-radius: 50%;
+}
+.navbar .btn {
+  border: 3px solid #24BEE0;
+  border-radius: 20px !important;
+  background-color: #24BEE0;
+  color: white;
+}
+.client {
+  border: 3px solid #24BEE0;
+  border-radius: 20px !important;
+  background-color: #24BEE0;
+  color: white;
+}
+.client:hover {
+  border: 3px solid #1fa7c5;
+  background-color: #1fa7c5;
+}
+.navbar .btn:hover {
+  border: 3px solid #24BEE0;
+  background-color: transparent;
+  color: #24BEE0;
+}
+.navbar li a {
+  position: relative;
+}
+.navbar li a span {
+  width: 0% !important;
+  height: 3px !important;
+  background-color: #E5661E !important;
+  position: absolute;
+  top: 85%;
+  left: 0;
+}
+.navbar li a:hover {
+  color: #E5661E;
+}
+.navbar li a:hover span {
+  width: 100% !important;
+  transition: width 0.75s;
+}
+.navbar li .active {
+  color: #E5661E !important;
+}
+
+#sec1 .textM {
+  width: 100%;
+}
+@media screen and (min-width: 992px) {
+  #sec1 .textM {
+    width: 65%;
+  }
+}
+#sec1 .textM h1:first-child {
+  font-size: 4rem !important;
+}
+#sec1 .textM .rect {
+  background-color: #F4F5F4;
+  width: 100%;
+  height: 60vh;
+  border-radius: 25px;
+}
+@media screen and (min-width: 768px) {
+  #sec1 .textM .rect {
+    height: 40vh;
+  }
+}
+#sec1 .textM .rect img {
+  width: 40px;
+  height: 40px;
+}
+#sec1 .textM .btnApp button {
+  border-radius: 25px !important;
+  background-color: #24BEE0;
+}
+#sec1 .textM .btnApp p {
+  color: #CF7D4E;
+}
+#sec1 .imgM {
+  width: 100%;
+}
+@media screen and (min-width: 992px) {
+  #sec1 .imgM {
+    width: 35%;
+  }
+}
+#sec1 .imgM img {
+  width: 95% !important;
+  height: 100%;
+  border-radius: 30px 0px 30px 30px !important;
+}
+
+#ourServices .cercle {
+  width: 40px;
+  height: 40px;
+  background-color: rgba(36, 190, 224, 0.3);
+  border-radius: 50%;
+  cursor: pointer;
+}
+#ourServices .cercle:hover {
+  background-color: rgba(36, 189, 224, 0.8);
+}
+#ourServices .cards {
+  width: 100%;
+  overflow: hidden;
+}
+#ourServices .cards .car .opa {
+  width: 100%;
+  position: relative;
+  cursor: pointer;
+}
+#ourServices .cards .car .opa img {
+  width: 100%;
+  height: 250px !important;
+  border-radius: 20px !important;
+  cursor: pointer;
+}
+#ourServices .cards .car .opa span {
+  width: 100%;
+  height: 250px;
+  border-radius: 20px !important;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+#ourServices .cards .car .opa:hover span {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+#Why .cards2 {
+  width: 100% !important;
+  height: auto !important;
+}
+#Why .cards2 .car2 {
+  border: 2px solid transparent;
+  border-radius: 40px;
+  cursor: pointer;
+}
+#Why .cards2 .car2 .cercle {
+  width: 80px;
+  height: 80px;
+  background-color: rgba(36, 190, 224, 0.3);
+  border-radius: 50%;
+  position: relative;
+}
+#Why .cards2 .car2 .cercle img {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#Why .cards2 .car2:hover {
+  background-color: #f7f7f7;
+  border: 2px solid #24BEE0;
+}
+
+#doctors {
+  background-color: hsla(22, 57%, 56%, 0.05);
+}
+#doctors .btnSee {
+  border: 2px solid #CF7D4E;
+  color: #CF7D4E;
+  border-radius: 25px;
+}
+#doctors .cards3 {
+  width: 100%;
+}
+#doctors .cards3 .card3 {
+  border-radius: 40px;
+  background-color: #F4F5F4;
+  cursor: pointer;
+}
+@media screen and (min-width: 992px) {
+  #doctors .cards3 .card3 {
+    max-width: 30%;
+  }
+}
+#doctors .cards3 .card3 h5 {
+  color: #0F97B5 !important;
+}
+#doctors .cards3 .card3:hover {
+  box-shadow: 0px 0px 20px 1px #CF7D4E;
+}
+
+#statistique {
+  width: 100%;
+  height: 60vh;
+  background-color: #062126;
+}
+@media screen and (min-width: 768px) {
+  #statistique {
+    height: 30vh;
+  }
+}
+#statistique p {
+  color: #12CCF4;
+}
+#statistique .sep {
+  width: 2px;
+  height: 90%;
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+#test .cercle {
+  width: 40px;
+  height: 40px;
+  background-color: #24BEE0;
+  border-radius: 50%;
+  cursor: pointer;
+}
+#test .comm {
+  background-color: rgba(207, 125, 78, 0.08) !important;
+  border-radius: 30px;
+}
+#test .comm .imgs img {
+  width: 60px;
+  height: 60px;
+}
+@media screen and (min-width: 992px) {
+  #test .comm .imgs {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+#formApp form .btns {
+  border: 4px solid #24BEE0;
+  background-color: #24BEE0;
+  color: white;
+  border-radius: 25px;
+}
+#formApp form .btns:hover {
+  background-color: transparent;
+  color: #062126;
+}
+
+.foot {
+  height: auto;
+  background-color: rgba(36, 189, 224, 0.15);
+}
+.foot .menu {
+  width: 100%;
+  height: auto;
+}
+.foot .menu .cercle {
+  width: 40px;
+  height: 40px;
+  background-color: #bababa;
+  border-radius: 50%;
+  position: relative;
+}
+.foot .menu .cercle i {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.foot .menu ul li {
+  list-style: none;
+  cursor: pointer;
+}
+.foot .menu form input:first-child {
+  width: 65%;
+  background-color: rgba(36, 189, 224, 0.2745098039);
+  border: 3px solid rgba(36, 189, 224, 0.5725490196);
+  border-radius: 25px;
+}
+.foot .menu form input:last-child {
+  background-color: #24bde0;
+  color: white;
+  border: 3px solid #24bde0;
+  border-radius: 25px;
+  transform: translate(-50%);
+  margin: 0;
+}
+.foot span {
+  width: 100%;
+  height: 2px;
+  background-color: rgba(0, 0, 0, 0.123);
+}
+.foot .copyRight ul li {
+  list-style: none;
+}
+
+/* page doctors */
+#doctorsSec1 {
+  width: 100%;
+  height: 50vh;
+}
+#doctorsSec1 img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 10%;
+     object-position: 50% 10%;
+}
+#doctorsSec1 .op {
+  width: 100%;
+  height: 50vh;
+  background-color: rgba(0, 0, 0, 0.25);
+  position: absolute;
+  left: 0;
+}
+#doctorsSec1 span {
+  position: absolute;
+  top: 50;
+  left: 50;
+  transform: translate(-50, -50);
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+#doctorsInfo .carte {
+  width: 100%;
+  height: auto;
+}
+#doctorsInfo .carte .x {
+  width: 100%;
+  height: auto;
+}
+@media screen and (min-width: 768px) {
+  #doctorsInfo .carte .x {
+    height: 60vh;
+  }
+}
+#doctorsInfo .carte .x img {
+  width: 100%;
+  height: 100%;
+}
+@media screen and (min-width: 768px) {
+  #doctorsInfo .carte .x img {
+    max-width: 70%;
+  }
+}
+#doctorsInfo .carte .x .stat {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(229, 103, 30, 0.1);
+  border-radius: 30px;
+}
+@media screen and (min-width: 768px) {
+  #doctorsInfo .carte .x .stat {
+    width: 30%;
+  }
+}
+#doctorsInfo .carte .x .stat span {
+  color: #CF7D4E;
+}
+#doctorsInfo .carte .docInfo {
+  width: 80%;
+  height: 100%;
+}
+#doctorsInfo .carte .docInfo h4 {
+  color: #CF7D4E;
+}
+#doctorsInfo .carte .docInfo span {
+  color: #24BEE0;
+}
+
+#doctorsSec2 .carte .imgCarte {
+  width: 100%;
+  height: 50vh;
+  border-radius: 40px;
+  overflow: hidden;
+}
+#doctorsSec2 .carte .imgCarte img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 10%;
+     object-position: 50% 10%;
+}
+#doctorsSec2 .carte .agenda {
+  width: 100%;
+  height: 40vh;
+}
+#doctorsSec2 .carte .agenda .entet {
+  width: 100%;
+  height: 10vh;
+  background-color: #24beed;
+  border-radius: 30px 30px 0 0;
+}
+#doctorsSec2 .carte .agenda .bodyAgenda {
+  width: 100%;
+  height: 30vh;
+  background-color: rgba(186, 186, 186, 0.2470588235);
+  border-radius: 0 0 30px 30px;
+}
+#doctorsSec2 .carte .agenda .bodyAgenda .firstLoc {
+  width: 50%;
+}
+
+/* page about us */
+#aboutus {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  #aboutus {
+    width: 90%;
+  }
+}
+@media screen and (min-width: 992px) {
+  #aboutus {
+    width: 60%;
+  }
+}
+
+#archive .lines .line img {
+  width: 100%;
+  height: 40vh !important;
+}
+@media screen and (min-width: 768px) {
+  #archive .lines .line img {
+    width: 50%;
+  }
+}
+#archive .lines .line p {
+  width: 100%;
+}
+@media screen and (min-width: 768px) {
+  #archive .lines .line p {
+    width: 50%;
+  }
+}
+
+.rediriction {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  border-radius: 50%;
+  opacity: 0;
+  transition: all 0.3s;
+}
+
+.rediriction:hover {
+  border-color: #E5661E;
+  background-color: #E5661E;
+}
+
+.rediriction.show {
+  opacity: 1;
+}/*# sourceMappingURL=style.css.map */
