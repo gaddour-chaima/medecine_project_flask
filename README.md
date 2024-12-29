@@ -13,12 +13,45 @@ cd medecine_project_flask
 
 version python : 3.10
 
-# # # # # # # #
-# # COMMAND # #
-# # # # # # # #
+# # # # # # # # #
+# #  COMMAND  # #
+# # # # # # # # #
 
 python -m venv venv
 .\venv\Scripts\Activate.ps1
 pip install -r requirements.txt
 pip install pymysql
 flask run
+
+
+# # # # # # # # #
+# #  DataBase # #
+# # # # # # # # #
+
+-- Créer la base de données
+CREATE DATABASE medecin_db;
+
+-- Sélectionner la base de données
+USE medecin_db;
+
+-- Créer la table 'users'
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    telephone VARCHAR(15) NOT NULL,
+    password VARCHAR(100) NOT NULL
+);
+
+-- Créer la table 'appointments'
+CREATE TABLE appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    firstname VARCHAR(50) NOT NULL,
+    lastname VARCHAR(50) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    date DATETIME NOT NULL,
+    user_id INT NOT NULL,
+    prediction_result VARCHAR(100),
+    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE
+);
