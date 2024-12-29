@@ -11,24 +11,24 @@ from werkzeug.utils import secure_filename
 
 app = Flask(__name__)
 
-# Configuration pour la session
+# Configuration for session
 app.secret_key = "your_secret_key_here"
 
-# Configuration de la base de données
+# Configuration for the database
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/medecin_db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-# Configuration pour les fichiers uploadés
+# Configuration for uploaded files
 UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-# Charger le modèle IA (modèle brainT_detect.h5)
+# Load the trained AI model
 model = load_model('brainT_detect.h5')
 
 db = SQLAlchemy(app)
 
-# Modèle pour les utilisateurs
+# Model for users
 
 
 class User(db.Model):
@@ -40,7 +40,7 @@ class User(db.Model):
     telephone = db.Column(db.String(15), nullable=False)
     password = db.Column(db.String(100), nullable=False)
 
-# Modèle pour les rendez-vous
+# Model for appointments
 
 
 class Appointment(db.Model):
@@ -54,7 +54,7 @@ class Appointment(db.Model):
     user = db.relationship('User', backref='appointments')
     prediction_result = db.Column(db.String(100), nullable=True)
 
-# Route pour la page d'accueil
+# Route for the homepage
 
 
 @app.route('/')
@@ -64,7 +64,7 @@ def home():
         return render_template('home.html', user=user)
     return redirect(url_for('login'))
 
-# Route pour la connexion
+# Route for login
 
 
 @app.route('/login', methods=['GET', 'POST'])
@@ -72,7 +72,6 @@ def login():
     if request.method == 'POST':
         email = request.form['email']
         password = request.form['password']
-
         user = User.query.filter_by(email=email).first()
         if user and user.password == password:
             session['user_id'] = user.id
@@ -81,7 +80,7 @@ def login():
         flash('Invalid email or password.')
     return render_template('index.html')
 
-# Route pour l'enregistrement
+# Route for registration
 
 
 @app.route('/register', methods=['GET', 'POST'])
@@ -93,16 +92,11 @@ def register():
         telephone = request.form['telephone']
         password = request.form['password']
         confirm_password = request.form['confirm_password']
-
         if password != confirm_password:
             flash('Passwords do not match.')
             return redirect(url_for('register'))
-
-        new_user = User(
-            firstname=firstname, lastname=lastname,
-            email=email, telephone=telephone, password=password
-        )
-
+        new_user = User(firstname=firstname, lastname=lastname,
+                        email=email, telephone=telephone, password=password)
         try:
             db.session.add(new_user)
             db.session.commit()
@@ -113,7 +107,7 @@ def register():
             flash('Email already exists.')
     return render_template('register.html')
 
-# Route pour les rendez-vous
+# Route for making appointments
 
 
 @app.route('/make_appointment', methods=['GET', 'POST'])
@@ -121,7 +115,6 @@ def make_appointment():
     if 'user_id' not in session:
         flash('Please log in to make an appointment.')
         return redirect(url_for('login'))
-
     user = User.query.get(session['user_id'])
     if request.method == 'POST':
         firstname = request.form['firstname']
@@ -131,9 +124,7 @@ def make_appointment():
         try:
             date = datetime.strptime(date_str, '%Y-%m-%dT%H:%M')
             new_appointment = Appointment(
-                firstname=firstname, lastname=lastname,
-                email=email, date=date, user_id=user.id, prediction_result=""
-            )
+                firstname=firstname, lastname=lastname, email=email, date=date, user_id=user.id, prediction_result="")
             db.session.add(new_appointment)
             db.session.commit()
             flash("Appointment added successfully!")
@@ -143,7 +134,7 @@ def make_appointment():
         user_id=user.id).order_by(Appointment.date).all()
     return render_template('clients.html', appointments=appointments)
 
-# Route pour l'upload de l'image et la prédiction
+# Route for uploading image and making prediction
 
 
 @app.route('/ai_upload/<int:appointment_id>', methods=['GET', 'POST'])
@@ -205,13 +196,13 @@ def ai_upload(appointment_id):
         return redirect(url_for('ai_upload', appointment_id=appointment_id))
 
 
-# Vérifier si le fichier est valide
+# Check if the file is allowed
 
 
 def allowed_file(filename):
     return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
-# Routes supplémentaires
+# Additional routes
 
 
 @app.route('/logout', methods=['POST'])
@@ -239,7 +230,7 @@ def clients():
 def about():
     return render_template('about.html')
 
-# Création des tables
+# Create the database tables
 
 
 def create_tables():
